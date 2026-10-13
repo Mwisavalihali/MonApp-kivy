@@ -31,6 +31,9 @@ jobs:
 
       - name: Sauvegarder l'APK
         uses: actions/upload-artifact@v4
+        with: 
+          name: mon-application-apk
+          path: bin/*.apk
         with:
           name: MonApplication-APK
           path: bin/*.apk
