@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
 
-    steps:
+    steps: 
       - name: Récupérer le code
         uses: actions/checkout@v4
 
@@ -23,11 +23,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libsqlite3-dev
           pip3 install --user --upgrade Cython==0.29.33 virtualenv buildozer
-
-      - name: Fabriquer l'APK
-        run: |
-          export PATH=$PATH:~/.local/bin
-          yes | buildozer android debug
 
       - name: Fabriquer l'APK
         run: |
