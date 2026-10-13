@@ -1,15 +1,14 @@
-name: Creer APK
+name: Build APK
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - name: Récupérer le code
         uses: actions/checkout@v4
 
@@ -27,16 +26,10 @@ jobs:
       - name: Fabriquer l'APK
         run: |
           export PATH=$PATH:~/.local/bin
-          buildozer android debug ||true
+          yes | buildozer android debug
 
       - name: Sauvegarder l'APK
         uses: actions/upload-artifact@v4
-        with: 
-          name: mon-application-apk
-          path: | 
-            * .apk
-            bin/* .apk
-            **/bin/*.apk
         with:
-          name: MonApplication-APK
+          name: mon-apk
           path: bin/*.apk
