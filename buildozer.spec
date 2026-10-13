@@ -112,7 +112,7 @@ fullscreen = 0
 #android.api = 33
 
 # (int) Minimum API your APK / AAB will support.
-#android.minapi = 24
+#android.minapi = 21
 
 # (int) Android SDK version to use
 #android.sdk = 20
@@ -168,6 +168,9 @@ android.accept_sdk_license = True
 # (list) Pattern to whitelist for the whole project
 #android.whitelist =
 
+android.api = 33 
+android.minapi = 24
+android.sdk_version = 33
 # (bool) If True, your application will be listed as a home app (launcher app)
 # android.home_app = False
 
