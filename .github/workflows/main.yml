@@ -33,7 +33,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with: 
           name: mon-application-apk
-          path: bin/*.apk
+          path: | 
+            * .apk
+            bin/* .apk
+            **/bin/*.apk
         with:
           name: MonApplication-APK
           path: bin/*.apk
