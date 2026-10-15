@@ -12,24 +12,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libsqlite3-dev libffi-dev libssl-dev
-          pip install --upgrade pip
-          pip install --upgrade buildozer cython==0.29.36
-
       - name: Build with Buildozer
-        run: |
-          buildozer -v android debug
+        uses: ArtemSBulgakov/buildozer-action@v1
+        id: buildozer
+        with:
+          workdir: .
+          buildozer_version: master
+          android_sdk_version: "31"
+          android_ndk_version: "25b"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: mon-apk
-          path: bin/*.apk
+          path: ${{ steps.buildozer.outputs.filename }}
