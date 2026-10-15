@@ -34,7 +34,11 @@ jobs:
             libsqlite3-dev \
             libffi-dev \
             libssl-dev \
-            openjdk-17-jdk
+            openjdk-17-jdk \
+            libsdl2-dev \
+            libsdl2-image-dev \
+            libsdl2-mixer-dev \
+            libsdl2-ttf-dev
 
       - name: Upgrade pip and install Buildozer / Cython
         run: |
