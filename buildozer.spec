@@ -502,3 +502,6 @@ warn_on_root = 1
 # Indiquer explicitement le niveau d'API cible pour stabiliser le build
 android.api = 33
 adroid.minapi = 21
+
+#Force explicitement la version du python pour p4a pour éviter les conflits avec la version 3.14 
+p4a.python_version = 3.10
