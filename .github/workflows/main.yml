@@ -48,10 +48,9 @@ jobs:
           pip install "cython<3.0"
           pip install buildozer
 
-      - name: Clean previous builds and Build APK
+      - name: Build APK with Buildozer
         run: |
           source venv/bin/activate
-          buildozer android clean
           buildozer -v android debug
 
       - name: Upload APK Artifact
