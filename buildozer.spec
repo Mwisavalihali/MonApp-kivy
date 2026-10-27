@@ -505,3 +505,6 @@ adroid.minapi = 21
 
 #Force explicitement la version du python pour p4a pour éviter les conflits avec la version 3.14 
 p4a.python_version = 3.10
+
+# Utliser une branche stable pour p4a pour éviter les bugs de version hôte
+p4a.branch = master
