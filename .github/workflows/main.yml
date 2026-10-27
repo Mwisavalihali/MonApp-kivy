@@ -39,6 +39,10 @@ jobs:
             libsdl2-mixer-dev \
             libsdl2-ttf-dev
 
+      - name: Clear old buildozer cache
+        run: |
+          rm -rf .buildozer
+
       - name: Create Virtual Environment and Install Buildozer
         run: |
           python -m venv venv
